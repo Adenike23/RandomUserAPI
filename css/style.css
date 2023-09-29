@@ -1,0 +1,137 @@
+*{
+    /* margin: 0; */
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mooli', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 1rem 5rem;
+    margin: 0;
+}
+nav h2{
+    background-image: linear-gradient(to right, darkgray, bisque);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: title-animation 10s infinite;
+}
+@keyframes title-animation{
+    100%{background-image: linear-gradient(to right, darkkhaki, pink);}
+}
+nav i{
+    font-size: 35px;
+    color: white;
+}
+.today{
+    position: absolute;
+    right: 15px;
+}
+.copyright{
+    position: absolute;
+    right: 15px;
+}
+main{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+    width: 90%;
+    margin: 2.5rem auto;
+}
+.user-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(40, 37, 37);
+    padding: 10px 1rem;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px grey;
+    cursor: pointer;
+}
+.user-info img{
+    width: 50%;
+    border-radius: 50%;
+    margin: 15px auto;
+}
+.user-info p{
+    margin: 6px 0;
+    color: white;
+}
+.user-info i{
+    margin-right: 8px;
+}
+.ri-close-line{
+    font-size: 30px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+    position: fixed;
+    right: 1%;
+    top: 2%;
+}
+.modal-bg{
+    background-color: rgba(241, 239, 239, 0.938);
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.modal-body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    width: 40%;
+    height: 40%;
+    background-color: rgb(198, 194, 194);
+    padding: 2rem;
+    border-radius: 10px;
+}
+.modal-body img{
+    width: 30%;
+    border-radius: 50%;
+}
+@media screen and (max-width: 1400px) {
+    main{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .user-info{
+        padding: 11px;
+    }
+    .user-info i{
+        margin-right: 5px;
+    }
+}
+@media screen and (max-width: 992px) {
+    main{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 600px) {
+    nav{
+        padding: 1rem;
+    }
+    nav h2{
+        font-size: 20px;
+    }
+    main{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .copyright{
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+        right: 0;
+    }
+}
